@@ -38,11 +38,14 @@ body {
     border-bottom: 2px solid var(--accent-color);
 }
 
-.signal-icon {
-    font-size: 4rem;
-    display: block;
-    margin-bottom: 10px;
-    animation: pulse 2s infinite;
+.header-avatar {
+    width: 96px;
+    height: 96px;
+    object-fit: cover;
+    border: 2px solid var(--accent-color);
+    border-radius: 50%;
+    box-shadow: 0 0 18px rgba(100, 255, 218, 0.32);
+    margin-bottom: 16px;
 }
 
 #main-header h1 {
@@ -169,12 +172,6 @@ footer {
     border-radius: 50%; /* Make it circular for a modern profile look */
     margin: 20px 0 30px;
     box-shadow: 0 0 15px rgba(100, 255, 218, 0.4);
-}
-
-/* --- Animations --- */
-@keyframes pulse {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.6; transform: scale(1.05); }
 }
 
 @media (prefers-reduced-motion: reduce) {
