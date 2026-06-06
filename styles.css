@@ -97,6 +97,12 @@ h1 {
     border-radius: 8px;
     flex-basis: calc(33% - 20px); /* Three items per row approximation */
     min-width: 200px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.capability-grid div:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25), 0 0 18px rgba(100, 255, 218, 0.12);
 }
 
 /* --- Section: Evidence & Links --- */
@@ -104,6 +110,12 @@ h1 {
     display: inline-block;
     margin-right: 15px;
     margin-bottom: 10px;
+    transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+#evidence ul li a:hover {
+    color: var(--accent-color);
+    text-shadow: 0 0 8px rgba(100, 255, 218, 0.45);
 }
 
 .card-link {
@@ -114,6 +126,12 @@ h1 {
     text-decoration: none;
     border-radius: 5px;
     margin-top: 10px;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.card-link:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 0 14px rgba(100, 255, 218, 0.35);
 }
 
 /* Footer */
