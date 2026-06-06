@@ -27,147 +27,97 @@ body {
     margin: 40px auto;
     padding: 20px;
     background-color: var(--card-bg);
-    border-radius: 8px;
-    box-shadow: 0 0 25px rgba(100, 255, 218, 0.1); /* Subtle glow */
 }
 
-/* --- Header Styling --- */
+/* Header Styling */
 #main-header {
-    text-align: center;
-    padding: 60px 20px 30px;
-    border-bottom: 2px solid var(--accent-color);
-}
-
-#main-header h1 {
-    font-family: var(--font-mono);
-    font-size: 3.5rem;
-    letter-spacing: 4px;
-    margin: 0;
-    text-transform: uppercase;
-}
-
-.subtitle {
-    color: #c5d3e0;
-    margin-top: -10px;
-}
-
-/* --- Section Styling --- */
-.content-section {
-    padding: 40px 20px;
-    border-bottom: 1px dashed rgba(100, 255, 218, 0.2);
-}
-
-.content-section h2 {
-    font-family: var(--font-mono);
-    color: var(--accent-color);
-    margin-top: 0;
-    padding-bottom: 10px;
-    border-bottom: 1px solid var(--accent-color);
-    font-size: 2rem;
-}
-
-.profile-card {
-    background: #1f3a59;
-    padding: 20px;
-    border-left: 4px solid var(--accent-color);
-    margin: 20px 0;
-}
-
-.keyword {
-    font-weight: bold;
-    color: #ffff88; /* Yellowish for focus terms */
-}
-
-/* --- Lists and Grids --- */
-#research ul {
-    list-style: none;
-    padding: 0;
-}
-#research li {
-    margin-bottom: 10px;
-    padding-left: 1.5em;
-    position: relative;
-}
-#research li::before {
-    content: '›'; /* Unicode arrow/dot */
-    color: var(--accent-color);
-    font-weight: bold;
-    display: inline-block;
-    width: 1em;
-    margin-right: .5em;
-}
-
-#evidence ul {
-    padding-left: 1.2rem;
-}
-
-#evidence a {
-    color: var(--accent-color);
-}
-
-.capability-grid {
     display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin: 30px 0;
-}
-.capability-grid div {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 10px 15px;
-    border-radius: 4px;
-    flex: 1;
-    min-width: 200px;
-}
-
-/* --- Links/Contact --- */
-.links {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    margin-top: 30px;
-}
-.card-link {
-    text-decoration: none;
-    color: var(--accent-color);
-    padding: 15px 30px;
-    border: 1px solid var(--accent-color);
-    border-radius: 20px;
-    transition: background-color 0.3s, color 0.3s;
-    font-weight: bold;
-}
-
-.card-link:hover {
-    background-color: var(--accent-color);
-    color: var(--bg-color);
-    box-shadow: 0 0 15px var(--accent-color);
-}
-
-.card-link:focus-visible {
-    outline: 3px solid var(--accent-color);
-    outline-offset: 4px;
-}
-
-/* --- Footer --- */
-footer {
+    flex-direction: column; /* Stacking vertically for cleaner mobile view/layout stability */
+    align-items: center;
     text-align: center;
-    padding: 20px;
-    border-top: 1px dashed rgba(100, 255, 218, 0.2);
-    font-size: 0.9em;
-    color: #a8b5c2;
+    padding: 50px 20px 30px;
 }
 
 .header-avatar {
-    max-width: 150px; /* Control size */
-    height: auto;
-    border-radius: 50%; /* Make it circular for a modern profile look */
-    margin: 20px 0 30px;
-    box-shadow: 0 0 15px rgba(100, 255, 218, 0.4);
+    width: 800px !important; /* <--- FINAL UPDATED SIZE HERE */
+    height: auto !important;
+    border-radius: 15px; /* Keeping a nice radius from previous design */
+    margin-bottom: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
-@media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
-        animation: none !important;
-        scroll-behavior: auto !important;
-        transition: none !important;
-    }
+h1 {
+    font-size: 3em;
+    color: var(--accent-color);
+    margin: 0.5em 0;
+}
+
+.subtitle {
+    font-size: 1.2em;
+    opacity: 0.8;
+}
+
+
+/* --- Section: Identity (Profile Card) --- */
+#identity .profile-card p {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(100, 255, 218, 0.1); /* Lighter separator for text blocks */
+}
+
+/* --- Section: Research Deep Dive --- */
+#research ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#research li {
+    margin-bottom: 15px;
+}
+
+.focus {
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+
+/* --- Section: Capabilities --- */
+.capability-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+    justify-content: space-around;
+}
+
+.capability-grid div {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    border-radius: 8px;
+    flex-basis: calc(33% - 20px); /* Three items per row approximation */
+    min-width: 200px;
+}
+
+/* --- Section: Evidence & Links --- */
+#evidence ul li a {
+    display: inline-block;
+    margin-right: 15px;
+    margin-bottom: 10px;
+}
+
+.card-link {
+    display: block;
+    padding: 8px 12px;
+    background-color: var(--accent-color);
+    color: var(--bg-color); /* Dark text on neon background */
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    opacity: 0.7;
+    font-size: 0.9em;
 }
