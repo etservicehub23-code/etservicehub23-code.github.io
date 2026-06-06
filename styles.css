@@ -38,16 +38,6 @@ body {
     border-bottom: 2px solid var(--accent-color);
 }
 
-.header-avatar {
-    width: 96px;
-    height: 96px;
-    object-fit: cover;
-    border: 2px solid var(--accent-color);
-    border-radius: 50%;
-    box-shadow: 0 0 18px rgba(100, 255, 218, 0.32);
-    margin-bottom: 16px;
-}
-
 #main-header h1 {
     font-family: var(--font-mono);
     font-size: 3.5rem;
@@ -166,7 +156,7 @@ footer {
     color: #a8b5c2;
 }
 
-.profile-avatar {
+.header-avatar {
     max-width: 150px; /* Control size */
     height: auto;
     border-radius: 50%; /* Make it circular for a modern profile look */
