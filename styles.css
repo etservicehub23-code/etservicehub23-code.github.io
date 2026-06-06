@@ -27,6 +27,8 @@ body {
     margin: 40px auto;
     padding: 20px;
     background-color: var(--card-bg);
+    box-shadow: 0 15px 45px rgba(10, 25, 47, 0.9), inset 0 4px 30px rgba(100, 255, 218, 0.1);
+    border: 1px solid rgba(100, 255, 218, 0.2);
 }
 
 /* Header Styling */
