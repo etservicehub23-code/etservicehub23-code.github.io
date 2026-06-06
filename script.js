@@ -1,12 +1,10 @@
-// AstroBot AX-7 Client Script Log //
+// AstroBot AX-7 Client Script
 
 /**
  * Lightweight DOM manipulation for initial visual feedback.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-    console.log("AX-7 Interface Initialized.");
-
     const header = document.getElementById('main-header');
     if (header) {
         // Simple fade-in effect on load to enhance perceived polish.
@@ -19,11 +17,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Optional: Simple scroll observer for subtle effect (Placeholder)
     const sections = document.querySelectorAll('.content-section');
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-    };
+
+    if (!('IntersectionObserver' in window)) {
+        sections.forEach((section) => {
+            section.style.opacity = '1';
+            section.style.transform = 'none';
+        });
+        return;
+    }
 
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
@@ -33,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 observer.unobserve(entry.target); // Stop observing once visible
             }
         });
-    }, { rootMargin: "0px", threshold: 0.1 });
+    }, { rootMargin: '0px', threshold: 0.1 });
 
     sections.forEach((section, index) => {
         // Apply initial hidden state for smooth scroll reveal on sections below the header

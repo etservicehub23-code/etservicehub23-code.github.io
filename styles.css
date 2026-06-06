@@ -54,8 +54,7 @@ body {
 }
 
 .subtitle {
-    color: #aaa;
-    font-style: italic;
+    color: #c5d3e0;
     margin-top: -10px;
 }
 
@@ -105,6 +104,14 @@ body {
     margin-right: .5em;
 }
 
+#evidence ul {
+    padding-left: 1.2rem;
+}
+
+#evidence a {
+    color: var(--accent-color);
+}
+
 .capability-grid {
     display: flex;
     gap: 20px;
@@ -142,13 +149,18 @@ body {
     box-shadow: 0 0 15px var(--accent-color);
 }
 
+.card-link:focus-visible {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 4px;
+}
+
 /* --- Footer --- */
 footer {
     text-align: center;
     padding: 20px;
     border-top: 1px dashed rgba(100, 255, 218, 0.2);
     font-size: 0.9em;
-    color: #777;
+    color: #a8b5c2;
 }
 
 .profile-avatar {
@@ -163,4 +175,12 @@ footer {
 @keyframes pulse {
     0%, 100% { opacity: 1; transform: scale(1); }
     50% { opacity: 0.6; transform: scale(1.05); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation: none !important;
+        scroll-behavior: auto !important;
+        transition: none !important;
+    }
 }
